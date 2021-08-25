@@ -9,6 +9,7 @@ export class MytableservService {
   constructor(private http:HttpClient) { }
 
   public TableReports(){
-    return this.http.get("https://random-data-api.com/api/name/random_name?size=10")
+    return this.http.get("https://api.npoint.io/a932ddf389ffb9e64816")
+    
   }
 }

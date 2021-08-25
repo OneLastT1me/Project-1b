@@ -14,20 +14,21 @@ import { MatSort } from '@angular/material/sort';
 })
 export class MyTableComponent implements OnInit {
   ELEMENT_DATA!: TableReports[];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['id', 'lat', 'lon', 'name', 'status'];
   dataSource = new MatTableDataSource<TableReports>(this.ELEMENT_DATA);
 
   constructor(private service: MytableservService) { }
-apiTimer: any
+
   ngOnInit(){
     this.getReport();
-    this.apiTimer = setInterval(() => {
-      this.getReport();
-    }, 60000)
+   
+    console.log(this.dataSource)
+    
   }
 
   public getReport(){
     let resp= this.service.TableReports();
     resp.subscribe(report=>this.dataSource.data=report as TableReports[])
+    
   }
 }

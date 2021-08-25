@@ -1,0 +1,10 @@
+{
+    "/b/M8D7": {
+      "target": "https://jsonkeeper.com/b/M8D7",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
